@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
 urlpatterns = [
     path('register/', views.register, name='register'),
