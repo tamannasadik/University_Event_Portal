@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ event.title }}</title>
+</head>
+<body>
+    <h1>{{ event.title }}</h1>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+    <p><strong>Starts:</strong> {{ event.start_time }}</p>
+    <p><strong>Ends:</strong> {{ event.end_time }}</p>
+    <p>{{ event.description }}</p>
+    <a href="{% url 'event_list' %}">← Back to Events</a>
+</body>
+</html>
