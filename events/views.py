@@ -1,6 +1,15 @@
+# views.py
 from django.shortcuts import render, get_object_or_404
 from .models import Event
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
+from datetime import datetime
+
+def home_view(request):
+    today = timezone.now()
+    events = Event.objects.filter(start_time__gte=today).order_by('start_time')
+    year = datetime.now().year
+    return render(request, 'events/home.html', {'events': events, 'year': year})
 
 @login_required
 def event_list(request):
