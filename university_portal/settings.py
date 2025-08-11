@@ -52,6 +52,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+LOGIN_URL = 'login'  # Optional, তুমি যদি লগইন পেজের নাম দিতে চাও
+LOGIN_REDIRECT_URL = '/events/'
+
 ROOT_URLCONF = 'university_portal.urls'
 
 TEMPLATES = [
